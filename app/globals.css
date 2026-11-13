@@ -1,0 +1,433 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff8fa;
+  --foreground: #2d1b30;
+  --primary-pink: #ec4899;
+  --primary-rose: #f43f5e;
+  --accent-blush: #fce7f3;
+  --accent-peach: #ffedd5;
+  --accent-lavender: #f3e8ff;
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --border-color: rgba(244, 114, 182, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #2e1a33;
+  background-color: #fff9fb;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #fbcfe8;
+  selection-color: #831843;
+}
+
+::selection {
+  background: #fbcfe8;
+  color: #831843;
+}
+
+/* Custom Soft Pink Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf2f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #f472b6;
+  border-radius: 9999px;
+  border: 2px solid #fdf2f4;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ec4899;
+}
+
+/* Handwriting Welcome Animation for Aya Adel */
+.welcome-handwrite {
+  font-family: var(--font-sacramento), "Sacramento", "Brush Script MT", cursive;
+  font-size: clamp(60px, 16vw, 160px);
+  line-height: 1.2;
+  padding: 0 0.15em;
+  color: #ec4899;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  animation: handwrite 7.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  text-shadow: 0 4px 25px rgba(244, 63, 94, 0.35);
+}
+
+@keyframes handwrite {
+  0%, 4% {
+    clip-path: inset(0 100% 0 0);
+  }
+  40% {
+    clip-path: inset(0 0 0 0);
+  }
+  65% {
+    clip-path: inset(0 0 0 0);
+  }
+  95%, 100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-handwrite {
+    animation: none;
+    clip-path: none;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-delayed {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes cursor-spark-fade {
+  0% {
+    opacity: 0.85;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.5);
+  }
+}
+
+@keyframes cat-tail-swish {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(14deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes cat-purr {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes cat-walk {
+  0% {
+    transform: translateX(-120vw);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
+}
+
+@keyframes paw-stomp {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-15deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(-20px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4.5s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-tail-swish {
+  transform-origin: bottom center;
+  animation: cat-tail-swish 2.8s ease-in-out infinite;
+}
+
+.animate-purr {
+  animation: cat-purr 0.8s ease-in-out infinite;
+}
+
+/* Light Mode Material-UI Pickers Customization */
+.MuiPickersLayout-root {
+  background-color: transparent !important;
+  max-width: 100% !important;
+}
+
+.MuiDialog-paper {
+  background-color: #ffffff !important;
+  color: #2d1b30 !important;
+  border: 1px solid rgba(244, 114, 182, 0.35) !important;
+  box-shadow: 0 25px 50px -12px rgba(244, 63, 94, 0.2) !important;
+  border-radius: 1.5rem !important;
+}
+
+.MuiPickersDay-root {
+  color: #37203d !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.MuiPickersDay-root:hover {
+  background-color: #fce7f3 !important;
+  color: #db2777 !important;
+}
+
+.MuiPickersDay-root.Mui-selected {
+  background-color: #ec4899 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4) !important;
+}
+
+.MuiDayCalendar-weekDayLabel {
+  color: #f43f5e !important;
+  font-weight: 600 !important;
+}
+
+.MuiPickersCalendarHeader-label {
+  color: #2d1b30 !important;
+  font-weight: 700 !important;
+}
+
+.MuiMultiSectionDigitalClockSection-root {
+  border-color: rgba(244, 114, 182, 0.2) !important;
+}
+
+.MuiMenuItem-root.Mui-selected {
+  background-color: #fce7f3 !important;
+  color: #db2777 !important;
+}
+
+/* Floating Dreamy Background with Soft Floating Bubbles & Petals */
+@keyframes dreamy-drift {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-500px) rotate(180deg) scale(1.1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-1100px) rotate(360deg) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.18) 0%, rgba(251, 146, 60, 0.1) 70%, transparent 100%);
+  animation: dreamy-drift 18s linear infinite;
+  border-radius: 50% !important;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.background li:nth-child(0),
+.background li:nth-child(16) {
+  left: 12%;
+  width: 90px;
+  height: 90px;
+  bottom: -90px;
+  animation-delay: 1s;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.2) 0%, rgba(254, 215, 170, 0.15) 100%);
+}
+
+.background li:nth-child(1) {
+  left: 28%;
+  width: 50px;
+  height: 50px;
+  bottom: -50px;
+  animation-delay: 4s;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, transparent 80%);
+}
+
+.background li:nth-child(2) {
+  left: 45%;
+  width: 110px;
+  height: 110px;
+  bottom: -110px;
+  animation-delay: 2s;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.18) 0%, transparent 80%);
+}
+
+.background li:nth-child(3) {
+  left: 65%;
+  width: 75px;
+  height: 75px;
+  bottom: -75px;
+  animation-delay: 8s;
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.18) 0%, transparent 80%);
+}
+
+.background li:nth-child(4) {
+  left: 82%;
+  width: 100px;
+  height: 100px;
+  bottom: -100px;
+  animation-delay: 12s;
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.18) 0%, transparent 80%);
+}
+
+.background li:nth-child(5) {
+  left: 20%;
+  width: 65px;
+  height: 65px;
+  bottom: -65px;
+  animation-delay: 15s;
+}
+
+.background li:nth-child(6) {
+  left: 55%;
+  width: 85px;
+  height: 85px;
+  bottom: -85px;
+  animation-delay: 6s;
+}
+
+.background li:nth-child(7) {
+  left: 75%;
+  width: 45px;
+  height: 45px;
+  bottom: -45px;
+  animation-delay: 10s;
+}
+
+.background li:nth-child(8) {
+  left: 35%;
+  width: 95px;
+  height: 95px;
+  bottom: -95px;
+  animation-delay: 14s;
+}
+
+.background li:nth-child(9) {
+  left: 90%;
+  width: 60px;
+  height: 60px;
+  bottom: -60px;
+  animation-delay: 18s;
+}
+
+.background li:nth-child(10) {
+  left: 8%;
+  width: 120px;
+  height: 120px;
+  bottom: -120px;
+  animation-delay: 20s;
+}
+
+.background li:nth-child(11) {
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  bottom: -70px;
+  animation-delay: 24s;
+}
+
+.background li:nth-child(12) {
+  left: 38%;
+  width: 80px;
+  height: 80px;
+  bottom: -80px;
+  animation-delay: 22s;
+}
+
+.background li:nth-child(13) {
+  left: 68%;
+  width: 55px;
+  height: 55px;
+  bottom: -55px;
+  animation-delay: 7s;
+}
+
+.background li:nth-child(14) {
+  left: 15%;
+  width: 60px;
+  height: 60px;
+  bottom: -60px;
+  animation-delay: 28s;
+}
+
+.background li:nth-child(15) {
+  left: 85%;
+  width: 90px;
+  height: 90px;
+  bottom: -90px;
+  animation-delay: 16s;
+}

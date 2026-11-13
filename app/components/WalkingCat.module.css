@@ -1,0 +1,95 @@
+.walker {
+  position: fixed;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none; /* القطة متمنعش المستخدم يدوس على حاجة */
+  will-change: transform;
+  filter: drop-shadow(0 3px 5px rgba(236, 72, 153, 0.25));
+  animation-duration: var(--walk-ms, 12s);
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.toRight { animation-name: walkRight; }
+.toLeft  { animation-name: walkLeft; }
+
+@keyframes walkRight {
+  from { transform: translateX(calc(var(--cat-w) * -1.2)); }
+  to   { transform: translateX(100vw); }
+}
+
+/* لما تمشي شمال: بنبدأ من أقصى اليمين وبنرجع */
+@keyframes walkLeft {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(calc(var(--cat-w) * -1.2)); }
+}
+
+.flip { transform: scaleX(-1); }
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  /* نطّة خفيفة مع كل خطوة */
+  animation: bob 0.5s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+/* ---- الرجلين ---- */
+.legA, .legB {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+}
+.legA { animation: stepA 0.5s ease-in-out infinite; }
+.legB { animation: stepB 0.5s ease-in-out infinite; }
+
+@keyframes stepA {
+  0%, 100% { transform: rotate(-22deg); }
+  50%      { transform: rotate(22deg); }
+}
+@keyframes stepB {
+  0%, 100% { transform: rotate(22deg); }
+  50%      { transform: rotate(-22deg); }
+}
+
+/* ---- الدنب ---- */
+.tail {
+  transform-box: fill-box;
+  transform-origin: 100% 100%;
+  animation: tailWag 1.2s ease-in-out infinite;
+}
+@keyframes tailWag {
+  0%, 100% { transform: rotate(-8deg); }
+  50%      { transform: rotate(10deg); }
+}
+
+/* ---- الراس ---- */
+.head {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: headTilt 1s ease-in-out infinite;
+}
+@keyframes headTilt {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50%      { transform: rotate(1.5deg); }
+}
+
+/* ---- رمشة العين ---- */
+.eyes {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: blink 4s infinite;
+}
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  96%           { transform: scaleY(0.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .walker, .svg, .legA, .legB, .tail, .head, .eyes { animation: none; }
+}
