@@ -1,0 +1,5 @@
+:HL["/aya/_next/static/chunks/3le41jysag0-2.css","style"]
+:HL["/aya/_next/static/chunks/39vcfuuhb7eig.css","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
+0:{"b":"tXW2PsCOC6jXSe-bTZJOD","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

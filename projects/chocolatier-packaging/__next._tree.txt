@@ -1,0 +1,9 @@
+:HL["/aya/_next/static/chunks/3le41jysag0-2.css","style"]
+:HL["/aya/_next/static/chunks/39vcfuuhb7eig.css","style"]
+:HL["/aya/_next/static/media/Yellowtail_Regular-s.p.34-xvacptig-x.ttf","font",{"crossOrigin":"","type":"font/ttf"}]
+:HL["/aya/_next/static/media/geist-s.p.3rd3ws2mg35i0.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/aya/_next/static/media/geist_mono-s.p.3f30ggp2vw8zj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"id","t":"d","k":"chocolatier-packaging","s":[]},"h":96,"c":"$Q3"}]]
+1:[["children",{"s":"projects","h":96,"c":"$Q2"}]]
+0:{"b":"tXW2PsCOC6jXSe-bTZJOD","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
