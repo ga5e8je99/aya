@@ -1,3 +1,4 @@
+export const dynamic = 'force-static';
 import { INITIAL_PROJECTS } from "@/lib/siteData";
 
 export default async function sitemap() {
